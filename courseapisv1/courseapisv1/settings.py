@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses.apps.CoursesConfig',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'rest_framework',
+    'drf_yasg'
 ]
 AUTH_USER_MODEL='courses.User'
 
@@ -49,6 +51,19 @@ CKEDITOR_UPLOAD_PATH = "ckeditors/lessons/"
 
 import pymysql
 pymysql.install_as_MySQLdb()
+
+import cloudinary
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
+
+# Configuration
+cloudinary.config(
+    cloud_name = "dywix6n0z",
+    api_key = "198396299352167",
+    api_secret = "Hlh12SuOkmrk7ZRQTX8f-nkDwTY", # Click 'View API Keys' above to copy your API secret
+    secure=True
+)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

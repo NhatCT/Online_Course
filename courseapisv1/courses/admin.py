@@ -1,5 +1,5 @@
 from django.contrib import admin
-from courses.models import Category,Course,Lesson
+from courses.models import Category,Course,Lesson,Tag
 from django.utils.safestring import mark_safe
 
 from django import forms
@@ -27,5 +27,6 @@ class MyLessonAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category)
+admin.site.register(Tag)
 admin.site.register(Course,MyCourseAdmin)
 admin.site.register(Lesson,MyLessonAdmin)
